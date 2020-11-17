@@ -1,0 +1,102 @@
+body {
+  background-color: #f9f9f9;
+  text-align: center;;
+  margin-top: 40px;
+}
+
+input, textarea {
+  width: 425px;
+  padding: 10px;
+  border: 1px solid darkgray;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 70px;
+}
+
+.input-row {
+  margin-bottom: 10px;
+}
+
+.comments-container {
+  display: inline-block;
+  border: 1px solid #f2f2f2;
+}
+
+.new-comment, .comments-list {
+  padding: 20px;
+}
+
+.new-comment {
+  background-color: #efefef;
+}
+
+.comments-list {
+  padding-top: 30px;
+  background-color: white;
+  text-align: left;
+}
+
+.new-comment .new-comment-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-comment button {
+  color: white;
+  background-color: #46a9dd;
+  border-radius: 4px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.input-container {
+  width: 425px;
+  position: relative;
+}
+
+.input-container .search-input {
+  padding-left: 40px;
+  width: 100%;
+}
+
+.input-container .fa-search {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  font-size: 16px;
+  color: #d9d9d9;
+  pointer-events: none;
+}
+
+.comment {
+  margin-top: 20px;
+}
+
+.comment > * {
+  vertical-align: middle;
+}
+
+.comment img {
+  border-radius: 5px;
+}
+
+.comment-details {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.comment .email {
+  font-weight: bold;
+  color: #646464;
+}
+
+.comment .message {
+  color: #9d9d9d;
+}
+
+.error {
+  color: red;
+}
