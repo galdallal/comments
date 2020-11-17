@@ -8,6 +8,7 @@
   },
   "author": "Gal",
   "dependencies": {
+    "md5": "^2.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -15,6 +16,7 @@
     "@babel/core": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
     "html-webpack-plugin": "^4.3.0",
