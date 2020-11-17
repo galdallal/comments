@@ -13,13 +13,14 @@ productsRouter
 			/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
 				email.toLowerCase()
 			);
-		const {email, message} = req.body;
+		let {email, message} = req.body;
+		email = email.trim();
 		if (!message || !email) {
 			res.status(400).send('All fields are required');
 		} else if (!validateEmail(email)) {
 			res.status(400).send('Invalid email');
 		} else {
-			const {insertedId} = await dal.insertComment(req.body);
+			const {insertedId} = await dal.insertComment({email, message});
 			res.send(insertedId);
 		}
 	}));
