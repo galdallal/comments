@@ -8,6 +8,7 @@ import '@fortawesome/fontawesome-free/js/all';
 const App = () => {
   const [comments, setComments] = useState([]);
   const [filter, setFilter] = useState('');
+  const [selectedEmail, setSelectedEmail] = useState(null);
   const [insertError, setInsertError] = useState('');
   const emailRef = useRef('');
   const messageRef = useRef('');
@@ -32,6 +33,10 @@ const App = () => {
   const handleFilterChange = e => {
     setFilter(e.target.value);
   }
+
+  const stopPopupPropagation = e => {
+    e.stopPropagation();
+  }
   
   return (
     <div className='comments-container'>
@@ -50,7 +55,8 @@ const App = () => {
         </div>
         {comments.filter(({email}) => email.toLowerCase().includes(filter.toLowerCase())).map(({email, message, _id}) => (
           <div className='comment' key={_id}>
-            <img src={`https://www.gravatar.com/avatar/${md5(email.toLowerCase())}?size=45`} />
+            <img src={`https://www.gravatar.com/avatar/${md5(email.toLowerCase())}?size=45`}
+                 onClick={setSelectedEmail.bind(null, email)} />
             <div className='comment-details'>
               <div className='email'>{email}</div>
               <div className='message'>{message}</div>
@@ -58,6 +64,14 @@ const App = () => {
           </div>
         ))}
       </div>
+      {selectedEmail && (
+        <div>
+          <div className='overlay'></div>
+          <div className='center-container' onClick={setSelectedEmail.bind(null, null)}>
+            <div className="popup-content" onClick={stopPopupPropagation}>{selectedEmail}</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -81,6 +81,7 @@ textarea {
 
 .comment img {
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .comment-details {
@@ -99,4 +100,32 @@ textarea {
 
 .error {
   color: red;
+}
+
+.center-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.popup-content {
+  box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.4);
+  background-color: white;
+  text-align: center;
+  padding: 10px;
 }
